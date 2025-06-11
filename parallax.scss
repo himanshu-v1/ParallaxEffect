@@ -1,0 +1,30 @@
+.parallax {
+    position: relative;
+    min-height: 100vh;
+    height: fit-content;
+    overflow: visible;
+
+    &:has(.fixed) {
+        overflow: scroll;
+    }
+
+    .parallax-image {
+        position: absolute;
+        background-size: cover;
+        height: 100vh;
+        min-height: auto;
+        background-position: center;
+
+        &.fixed {
+            position: fixed;
+        }
+
+        .parallax-overlay {
+            background-color: white;
+            height: 0px;
+            bottom: 0;
+            transition: all .01s ease;
+            transition-delay: -1s;
+        }
+    }
+}
