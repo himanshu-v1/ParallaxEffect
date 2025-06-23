@@ -4,10 +4,6 @@
     height: fit-content;
     overflow: visible;
 
-    &:has(.fixed) {
-        overflow: scroll;
-    }
-
     .parallax-image {
         position: absolute;
         background-size: cover;
@@ -16,7 +12,7 @@
         background-position: center;
 
         &.fixed {
-            position: fixed;
+            position: fixed !important;
         }
 
         .parallax-overlay {
@@ -26,5 +22,10 @@
             transition: all .01s ease;
             transition-delay: -1s;
         }
+    }
+
+    &+:not(.parallax) {
+        z-index: 1;
+        position: relative;
     }
 }
